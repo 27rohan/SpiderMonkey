@@ -1,0 +1,30 @@
+<script>
+$(function () {
+  $( '#dialog1' ).dialog({
+    autoOpen: false
+  });
+  
+  $("#opener").click(function() {
+    $("#dialog1").dialog('open');
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#dialog_link').dialog({
+      autoOpen: false, 
+               buttons: {
+                  'OK': function() {$(this).dialog("close");}
+               },
+               title: "Success",
+               position: {
+                  my: "left center",
+                  at: "left center"
+               }
+    }); 
+    $('#dialog_link').on("mousedown", (function () {
+        $('#dialog2').dialog('open');
+    }));
+});
+</script>

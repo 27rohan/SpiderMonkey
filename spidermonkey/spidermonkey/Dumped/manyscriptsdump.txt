@@ -1,0 +1,19 @@
+function search() {
+	var str=document.getElementById("search").value;
+	if(str==""){
+		alert("NO INPUT");
+	}
+	else{
+		var xmlhttp = new XMLHttpRequest();
+	      xmlhttp.onreadystatechange = function() {
+      		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            		document.getElementById("main").innerHTML = xmlhttp.responseText;
+            	}
+			else{
+				document.getElementById("main").innerHTML="<img src=\"loading-circle.gif\">";
+			} 
+		}
+	      xmlhttp.open("GET", "searchtitle.php?q=" + str, true);
+      	xmlhttp.send();
+	}
+}
